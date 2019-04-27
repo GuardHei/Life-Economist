@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09c047e8-a58a-4936-b582-6ae3aa66f101" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/LayerManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/LayerManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/PlayerController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/PlayerController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Extensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Extensions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/LevelGenerator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/LevelGenerator.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Life-Economist/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Life-Economist/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Life-Economist/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Life-Economist/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Textures/Ground Atlas.spriteatlas" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Textures/Ground Atlas.spriteatlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Tiles/Tile Palette.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Tiles/Tile Palette.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,17 +55,54 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Resources/Scripts/PlayerController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="34" lean-forward="true" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+            <state relative-caret-position="480">
+              <caret line="32" column="30" lean-forward="true" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
               <folding>
                 <marker date="1556355887319" expanded="true" signature="106:945" ph="{...}" />
                 <marker date="1556355887319" expanded="true" signature="415:496" ph="{...}" />
                 <marker date="1556355887319" expanded="true" signature="521:762" ph="{...}" />
                 <marker date="1556355887319" expanded="true" signature="793:862" ph="{...}" />
                 <marker date="1556355887319" expanded="true" signature="892:943" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Resources/Scripts/LevelGenerator.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="387">
+              <caret line="75" column="80" selection-start-line="75" selection-start-column="80" selection-end-line="75" selection-end-column="80" />
+              <folding>
+                <marker date="1556377090215" expanded="true" signature="6:121" ph="..." />
+                <marker date="1556377090215" expanded="true" signature="167:2954" ph="{...}" />
+                <marker date="1556377090215" expanded="true" signature="695:724" ph="{...}" />
+                <marker date="1556377090215" expanded="true" signature="753:829" ph="{...}" />
+                <marker date="1556377090215" expanded="true" signature="767:826" ph="{...}" />
+                <marker date="1556377090215" expanded="true" signature="855:2718" ph="{...}" />
+                <marker date="1556377090215" expanded="true" signature="1380:2430" ph="{...}" />
+                <marker date="1556377090215" expanded="true" signature="1680:2426" ph="{...}" />
+                <marker date="1556377090215" expanded="true" signature="2193:2274" ph="{...}" />
+                <marker date="1556377090215" expanded="true" signature="2467:2581" ph="{...}" />
+                <marker date="1556377090215" expanded="true" signature="2509:2577" ph="{...}" />
+                <marker date="1556377090215" expanded="true" signature="2755:2952" ph="{...}" />
+                <marker date="1556377090215" expanded="true" signature="2773:2949" ph="{...}" />
+                <marker date="1556377090215" expanded="true" signature="2996:3191" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Resources/Scripts/Extensions.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+              <folding>
+                <marker date="1556367971482" expanded="true" signature="60:67" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -87,9 +128,13 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Scripts/PlayerMotor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A12B6BAE-CE58-40D4-80E0-869A49672B2F/fa/c7df6648/RaycastHit2D.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3B14123E-EC64-49DC-BDCE-6FE247C0F416/36/b44ad9a2/Random.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Resources/Scripts/LevelGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Scripts/LayerManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A12B6BAE-CE58-40D4-80E0-869A49672B2F/55/e3007167/Physics2D.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/919B7470-BBE5-4B54-8382-6EA317E49FFE/03/d6eaaddd/Tilemap.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Resources/Scripts/Extensions.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -97,6 +142,8 @@
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/LayerManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/PlayerMotor.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Extensions.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Scripts/LevelGenerator.cs" />
       </list>
     </option>
   </component>
@@ -192,12 +239,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1556348421991</updated>
-      <workItem from="1556348427554" duration="9613000" />
+      <workItem from="1556348427554" duration="20104000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9613000" />
+    <option name="totallyTimeSpent" value="20104000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -352,14 +399,218 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Resources/Scripts/PlayerController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="34" lean-forward="true" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+        <state relative-caret-position="480">
+          <caret line="32" column="30" lean-forward="true" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
           <folding>
             <marker date="1556355887319" expanded="true" signature="106:945" ph="{...}" />
             <marker date="1556355887319" expanded="true" signature="415:496" ph="{...}" />
             <marker date="1556355887319" expanded="true" signature="521:762" ph="{...}" />
             <marker date="1556355887319" expanded="true" signature="793:862" ph="{...}" />
             <marker date="1556355887319" expanded="true" signature="892:943" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3B14123E-EC64-49DC-BDCE-6FE247C0F416/36/b44ad9a2/Random.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="63" column="22" selection-start-line="63" selection-start-column="22" selection-end-line="63" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Resources/Scripts/Extensions.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+          <folding>
+            <marker date="1556367971482" expanded="true" signature="60:67" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/919B7470-BBE5-4B54-8382-6EA317E49FFE/03/d6eaaddd/Tilemap.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="305" column="25" selection-start-line="305" selection-start-column="25" selection-end-line="305" selection-end-column="25" />
+          <folding>
+            <marker date="1556367218696" expanded="true" signature="0:350" ph="/* Decompiled with JetBrains decompiler ... */" />
+            <marker date="1556367218696" expanded="false" signature="358:514" ph="..." />
+            <marker date="1556367218696" expanded="true" signature="546:36015" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="551:633" ph="///   &lt;para&gt;The tile map stores component.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="1054:36013" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="1316:1517" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="1332:1511" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="1551:1954" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="1567:1621" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="1631:1948" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="2025:2271" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="2062:2198" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="2350:2413" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="2505:2563" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="2658:2716" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="2722:2822" ph="///   &lt;para&gt;Gets the Grid associated with this tile map.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="2956:3256" ph="///   &lt;para&gt;Get the logical center coordinate of a grid cell in local space.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="3315:3408" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="3414:3714" ph="///   &lt;para&gt;Get the logical center coordinate of a grid cell in world space.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="3773:3885" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="3891:3998" ph="///   &lt;para&gt;Returns the boundaries of the Tilemap in cell size.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="4030:4122" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="4046:4116" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="4128:4242" ph="///   &lt;para&gt;Returns the boundaries of the Tilemap in local space size.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="4319:4445" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="4335:4439" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="4535:4666" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="4551:4660" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="4672:4783" ph="///   &lt;para&gt;The frame rate for all tile animations in the tile map.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="4936:5024" ph="///   &lt;para&gt;The color of the tile map layer.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="5047:5236" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="5063:5160" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="5170:5230" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="5242:5341" ph="///   &lt;para&gt;The origin of the Tilemap in cell position.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="5370:5566" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="5386:5489" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="5499:5560" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="5572:5661" ph="///   &lt;para&gt;The size of the Tilemap in cells.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="5688:5880" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="5704:5805" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="5815:5874" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="5886:5988" ph="///   &lt;para&gt;Gets the anchor point of tiles in the Tilemap.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="6069:6270" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="6085:6189" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="6199:6264" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="6276:6372" ph="///   &lt;para&gt;Orientation of the tiles in the Tilemap.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="6532:6654" ph="///   &lt;para&gt;Orientation Matrix of the orientation of the tiles in the Tilemap.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="6693:7006" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="6759:6872" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="6928:7000" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="7073:7140" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="7146:7385" ph="///   &lt;para&gt;Gets the.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="7434:7499" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="7564:7623" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="7739:7833" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="7839:8100" ph="///   &lt;para&gt;Retrieves an array of tiles with the given bounds.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="8154:8493" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="8571:8637" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="8643:8841" ph="///   &lt;para&gt;Sets a.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="8901:8975" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="9131:9361" ph="///   &lt;para&gt;Sets an array of.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="9436:9523" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="9722:9834" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="9840:10055" ph="///   &lt;para&gt;Fills bounds with array of tiles.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="10127:10247" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="10253:10530" ph="///   &lt;para&gt;Returns whether there is a tile at the position.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="10575:10658" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="10664:10808" ph="///   &lt;para&gt;Refreshes a.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="10903:10962" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="10968:11165" ph="///   &lt;para&gt;Refreshes all. The tile map will retrieve the rendering data, animation data and other data for all t ... " />
+            <marker date="1556367218696" expanded="true" signature="11461:11713" ph="///   &lt;para&gt;Swaps all existing tiles of changeTile to newTile and refreshes all the swapped tiles.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="11777:11878" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="12008:12287" ph="///   &lt;para&gt;Returns true if the Tilemap contains the given. Returns false if not.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="12336:12417" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="12423:12604" ph="///   &lt;para&gt;Get the total number of different.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="12702:13006" ph="///   &lt;para&gt;Fills the given array with the total number of different and returns the number of tiles filled.&lt;/par ... " />
+            <marker date="1556367218696" expanded="true" signature="13064:13159" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="13393:13623" ph="///   &lt;para&gt;Gets the.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="13672:13736" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="13742:13987" ph="///   &lt;para&gt;Gets the transform matrix of a.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="14048:14162" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="14168:14441" ph="///   &lt;para&gt;Sets the transform matrix of a tile given the XYZ coordinates of a cell in the.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="14518:14599" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="14605:14852" ph="///   &lt;para&gt;Gets the color of a.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="14941:15041" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="15047:15277" ph="///   &lt;para&gt;Sets the color of a.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="15378:15445" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="15451:15721" ph="///   &lt;para&gt;Gets the TileFlags of the Tile at the given position.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="15776:15843" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="15849:16104" ph="///   &lt;para&gt;Sets the TileFlags onto the Tile at the given position.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="16171:16238" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="16244:16544" ph="///   &lt;para&gt;Adds the TileFlags onto the Tile at the given position.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="16611:16678" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="16684:16945" ph="///   &lt;para&gt;Removes the TileFlags onto the Tile at the given position.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="17015:17085" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="17091:17345" ph="///   &lt;para&gt;Gets the.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="17465:17541" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="17676:17753" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="17759:18022" ph="///   &lt;para&gt;Gets the collider type of a.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="18137:18207" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="18213:18472" ph="///   &lt;para&gt;Does a flood fill with the given starting from the given coordinates.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="18534:18614" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="18736:18808" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="18814:19421" ph="///   &lt;para&gt;Does a box fill with the given. Starts from given coordinates and fills the limits from start to end  ... " />
+            <marker date="1556367218696" expanded="true" signature="19562:19668" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="19867:19965" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="19971:20075" ph="///   &lt;para&gt;Clears all tiles that are placed in the Tilemap.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="20170:20292" ph="///   &lt;para&gt;Resizes tiles in the Tilemap to bounds defined by origin and size.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="20386:20516" ph="///   &lt;para&gt;Compresses the origin and size of the Tilemap to bounds where tiles exist.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="20612:20745" ph="///   &lt;para&gt;The origin of the Tilemap in cell position inclusive of editor preview tiles.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="20787:20966" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="20844:20960" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="20972:21095" ph="///   &lt;para&gt;The size of the Tilemap in cells inclusive of editor preview tiles.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="21135:21310" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="21190:21304" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="21390:21470" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="21476:21746" ph="///   &lt;para&gt;Gets the editor preview.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="21808:21887" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="21965:22032" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="22123:22202" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="22208:22455" ph="///   &lt;para&gt;Sets an editor preview.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="22528:22615" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="22621:22930" ph="///   &lt;para&gt;Returns whether there is an editor preview tile at the position.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="22988:23084" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="23090:23335" ph="///   &lt;para&gt;Gets the.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="23397:23474" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="23480:23756" ph="///   &lt;para&gt;Gets the transform matrix of an editor preview.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="23830:23957" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="23963:24267" ph="///   &lt;para&gt;Sets the transform matrix of an editor preview tile given the XYZ coordinates of a cell in the.&lt;/para ... " />
+            <marker date="1556367218696" expanded="true" signature="24357:24451" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="24457:24735" ph="///   &lt;para&gt;Gets the Color of an editor preview.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="24850:24963" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="24969:25245" ph="///   &lt;para&gt;Sets the color of an editor preview.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="25372:25452" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="25458:25758" ph="///   &lt;para&gt;Gets the TileFlags of the editor preview Tile at the given position.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="25826:25906" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="25912:26200" ph="///   &lt;para&gt;Does an editor preview of a flood fill with the given starting from the given coordinates.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="26275:26368" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="26516:26601" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="26607:27229" ph="///   &lt;para&gt;Does an editor preview of a box fill with the given. Starts from given coordinates and fills the limi ... " />
+            <marker date="1556367218696" expanded="true" signature="27393:27491" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="27716:27827" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="27833:27952" ph="///   &lt;para&gt;Clears all editor preview tiles that are placed in the Tilemap.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="28190:28251" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="28345:28465" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="34937:35023" ph="///   &lt;para&gt;Determines the orientation of.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="35051:35840" ph="{...}" />
+            <marker date="1556367218696" expanded="true" signature="35064:35154" ph="///   &lt;para&gt;Orients tiles in the XY plane.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="35171:35261" ph="///   &lt;para&gt;Orients tiles in the XZ plane.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="35278:35368" ph="///   &lt;para&gt;Orients tiles in the YX plane.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="35385:35475" ph="///   &lt;para&gt;Orients tiles in the YZ plane.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="35492:35582" ph="///   &lt;para&gt;Orients tiles in the ZX plane.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="35599:35689" ph="///   &lt;para&gt;Orients tiles in the ZY plane.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="35706:35820" ph="///   &lt;para&gt;Use a custom orientation to all tiles in the tile map.&lt;/para&gt; ... " />
+            <marker date="1556367218696" expanded="true" signature="35897:36009" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Resources/Scripts/LevelGenerator.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="75" column="80" selection-start-line="75" selection-start-column="80" selection-end-line="75" selection-end-column="80" />
+          <folding>
+            <marker date="1556377090215" expanded="true" signature="6:121" ph="..." />
+            <marker date="1556377090215" expanded="true" signature="167:2954" ph="{...}" />
+            <marker date="1556377090215" expanded="true" signature="695:724" ph="{...}" />
+            <marker date="1556377090215" expanded="true" signature="753:829" ph="{...}" />
+            <marker date="1556377090215" expanded="true" signature="767:826" ph="{...}" />
+            <marker date="1556377090215" expanded="true" signature="855:2718" ph="{...}" />
+            <marker date="1556377090215" expanded="true" signature="1380:2430" ph="{...}" />
+            <marker date="1556377090215" expanded="true" signature="1680:2426" ph="{...}" />
+            <marker date="1556377090215" expanded="true" signature="2193:2274" ph="{...}" />
+            <marker date="1556377090215" expanded="true" signature="2467:2581" ph="{...}" />
+            <marker date="1556377090215" expanded="true" signature="2509:2577" ph="{...}" />
+            <marker date="1556377090215" expanded="true" signature="2755:2952" ph="{...}" />
+            <marker date="1556377090215" expanded="true" signature="2773:2949" ph="{...}" />
+            <marker date="1556377090215" expanded="true" signature="2996:3191" ph="{...}" />
           </folding>
         </state>
       </provider>

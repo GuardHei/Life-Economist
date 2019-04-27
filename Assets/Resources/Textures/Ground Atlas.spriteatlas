@@ -43,10 +43,11 @@ SpriteAtlas:
     packables:
     - {fileID: 2800000, guid: d3b92130de2bf41b2a01f80e18be598f, type: 3}
     - {fileID: 2800000, guid: a03e599bd303140eca2c79ad80972bfc, type: 3}
+    - {fileID: 2800000, guid: 6cccff5fa26774ebc8db6f825dd0e675, type: 3}
     - {fileID: 2800000, guid: 0340563aa860749b78499420ef118147, type: 3}
     - {fileID: 2800000, guid: 62d1dd4cf2890411d9d94587fbbcfdb3, type: 3}
     - {fileID: 2800000, guid: aac11d4c0ec504f1eab20c56ce20191c, type: 3}
-    totalSpriteSurfaceArea: 29645
+    totalSpriteSurfaceArea: 35574
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -55,11 +56,13 @@ SpriteAtlas:
   - {fileID: 21300000, guid: a03e599bd303140eca2c79ad80972bfc, type: 3}
   - {fileID: 21300000, guid: aac11d4c0ec504f1eab20c56ce20191c, type: 3}
   - {fileID: 21300000, guid: 62d1dd4cf2890411d9d94587fbbcfdb3, type: 3}
+  - {fileID: 21300000, guid: 6cccff5fa26774ebc8db6f825dd0e675, type: 3}
   m_PackedSpriteNamesToIndex:
   - Grass
   - Stone
   - Grass Test
   - Water
   - Ice
+  - Mud
   m_Tag: Ground Atlas
   m_IsVariant: 0

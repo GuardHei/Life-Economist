@@ -6,7 +6,9 @@
       <e p="Assets" t="Include">
         <e p="Resources" t="Include">
           <e p="Scripts" t="Include">
+            <e p="Extensions.cs" t="Include" />
             <e p="LayerManager.cs" t="Include" />
+            <e p="LevelGenerator.cs" t="Include" />
             <e p="PlayerController.cs" t="Include" />
             <e p="PlayerMotor.cs" t="Include" />
           </e>
