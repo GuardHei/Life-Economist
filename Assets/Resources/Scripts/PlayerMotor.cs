@@ -133,6 +133,7 @@ public class PlayerMotor : MonoBehaviour {
 	}
 
 	private void OnTriggerEnter2D(Collider2D other) {
+		if (other.gameObject.layer != LayerManager.GroundLayer) return;
 		_bottomOverlapTimes++;
 		if (_bottomOverlapTimes == 1) {
 			_grounded = true;
@@ -141,6 +142,7 @@ public class PlayerMotor : MonoBehaviour {
 	}
 
 	private void OnTriggerExit2D(Collider2D other) {
+		if (other.gameObject.layer != LayerManager.GroundLayer) return;
 		_bottomOverlapTimes--;
 		if (_bottomOverlapTimes == 0) {
 			_grounded = false;
