@@ -17,6 +17,5 @@ public static class AnimationManager {
 	public const int AttackState = 6;
 
 	public const string State = "State";
-	public const string Attack = "Attack";
 	public const string WalkSpeed = "WalkSpeed";
 }

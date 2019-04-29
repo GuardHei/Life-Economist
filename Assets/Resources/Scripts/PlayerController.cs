@@ -173,6 +173,7 @@ public class PlayerController : MonoBehaviour {
 		_attacking = false;
 		_damageTrigger.Disable();
 		State = !_grounded ? AnimationManager.JumpState : AnimationManager.IdleState;
+		_animator.Update(.05f);
 	}
 
 	private void OnDodgeEnter() {
@@ -220,6 +221,8 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	private void OnHurtEnter(Vector2 hit, int damage) {
+		Debug.ClearDeveloperConsole();
+		
 		if (_attacking) {
 			_attacking = false;
 			_damageTrigger.Disable();
@@ -233,6 +236,7 @@ public class PlayerController : MonoBehaviour {
 	public void OnHurtExit() {
 		_hurt = false;
 		State = !_grounded ? AnimationManager.JumpState : AnimationManager.IdleState;
+		_animator.Update(.05f);
 	}
 }
 

@@ -126,5 +126,6 @@ public class BirdController : MonoBehaviour {
 	public void OnHurtExit() {
 		_hurt = false;
 		State = AnimationManager.IdleState;
+		_animator.Update(.05f);
 	}
 }
