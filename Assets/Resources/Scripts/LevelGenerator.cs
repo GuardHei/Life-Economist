@@ -6,6 +6,8 @@ using Random = UnityEngine.Random;
 
 public class LevelGenerator : MonoBehaviour {
 
+	public PlayerController playerController;
+
 	public int minLength;
 	public int maxLength;
 	public int minHeight;
@@ -23,6 +25,7 @@ public class LevelGenerator : MonoBehaviour {
 	public int waterLevel = 4;
 	public int maxWaterLength = 8;
 	public float waterChance = .7f;
+	public float iceChance = .7f;
 	public Tilemap tilemap;
 	public TileBase grass;
 	public TileBase mud;
@@ -39,13 +42,13 @@ public class LevelGenerator : MonoBehaviour {
 
 	private void Awake() {
 		Generate();
-		// StartCoroutine(Exe());
+		StartCoroutine(Exe());
 	}
 
 	private IEnumerator Exe() {
-		while (g) {
-			Generate();
+		while (true) {
 			yield return new WaitForSeconds(2);
+			if (g) Generate();
 		}
 	}
 
@@ -79,12 +82,9 @@ public class LevelGenerator : MonoBehaviour {
 			int finishX = i + l;
 			int indentCounts = 0;
 			for (int i0 = minGroundThickness; i0 < h; i0++) {
-				for (int i1 = i + indent; i1 < finishX; i1++) {
-					map[i1, i0] = 1;
-				}
+				for (int i1 = i + indent; i1 < finishX; i1++) map[i1, i0] = Random.Range(0f, 1f) < .75f ? 1 : 2;
 
-				bool hasIndent = false;
-				if (indentCounts < maxJumpHeight) hasIndent = Random.Range(0, 10) < 8;
+				bool hasIndent = Random.Range(0, 10) < 8;
 				if (hasIndent) indent += Random.Range(1, 4);
 
 				bool shorten = Random.Range(0, 10) < 7;
@@ -94,6 +94,31 @@ public class LevelGenerator : MonoBehaviour {
 				finishX = i + l;
 			}
 		}
+		
+		// remove cliffs
+		for (int i = 1; i < length; i++) {
+			int cliffHeight = -1;
+			for (int j = minGroundThickness; j < height; j++) {
+				if (cliffHeight == -1) cliffHeight = map[i - 1, j] == -1 ? 0 : -1;
+				if (cliffHeight != -1) {
+					if (map[i, j] != -1) cliffHeight++;
+					if (cliffHeight > maxJumpHeight) map[i, j] = -1;
+				}
+			}
+		}
+		/*
+		for (int i = 1; i < length; i++) {
+			for (int j = minGroundThickness; j < height; j++) {
+				bool isLeftSolid = map[i - 1, j] != -1 || map[i - 1, j] != 5;
+				bool hasAir = false;
+				if (!isLeftSolid) {
+					for (int i0 = 1; i0 <= maxJumpHeight; i0++)
+						if (map[i, j - i0] == -1) hasAir = true;
+					if (!hasAir) map[i, j] = -1;
+				}
+			}
+		}
+		*/
 		
 		// fill lakes
 		for (int i = minGroundThickness; i < waterLevel; i++) {
@@ -105,7 +130,7 @@ public class LevelGenerator : MonoBehaviour {
 				int type1 = map[i0, i - 2];
 				bool hasProblem = false;
 				if (type0 == -1) hasProblem = true;
-				else if (type0 == 5 && type1 == 5) hasProblem = true;
+				else if (type0 == 4 && type1 == 4) hasProblem = true;
 				if (hasProblem) {
 					startX = -1;
 					hasSolid = false;
@@ -116,7 +141,7 @@ public class LevelGenerator : MonoBehaviour {
 				else if (isSolid && startX != -1) {
 					int l = i0 - startX + 1;
 					if (l <= maxWaterLength && Random.Range(0f, 1f) < waterChance)
-						for (int i1 = startX; i1 < i0; i1++) map[i1, i] = 5;
+						for (int i1 = startX; i1 < i0; i1++) map[i1, i] = 4;
 					
 					startX = -1;
 					hasSolid = false;
@@ -131,10 +156,24 @@ public class LevelGenerator : MonoBehaviour {
 			
 		}
 
-		// grow grass
+		// grow grass and freeze ice
 		for (int i = 0; i < length; i++) {
 			for (int j = 0; j < height - 1; j++) {
-				if (map[i, j] == 1 && map[i, j + 1] == -1) map[i, j] = 0;
+				if (map[i, j] == 1 && map[i, j + 1] == -1) {
+					if (i > 3 && i < length - 4) {
+						bool hasWater = false;
+						for (int i0 = -4; i0 < 5; i0++) {
+							if (map[i + i0, j] == 4) {
+								hasWater = true;
+								break;
+							}
+						}
+
+						if (hasWater) map[i, j] = Random.Range(0f, 1f) < iceChance ? 3 : 0;
+						else map[i, j] = 0;
+					} else map[i, j] = 0;
+					
+				}
 			}
 		}
 
@@ -150,9 +189,8 @@ public class LevelGenerator : MonoBehaviour {
 			case 0: return grass;
 			case 1: return mud;
 			case 2: return stone;
-			case 3: return stone;
-			case 4: return ice;
-			case 5: return water;
+			case 3: return ice;
+			case 4: return water;
 			default: return null;
 		}
 	}

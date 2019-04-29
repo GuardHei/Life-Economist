@@ -202,12 +202,17 @@
         </e>
         <e p="Resources" t="Include">
           <e p="Scripts" t="Include">
-            <e p="AttackFinishCallback.cs" t="Include" />
+            <e p="BirdController.cs" t="Include" />
+            <e p="BirdHurtFinishCallback.cs" t="Include" />
+            <e p="EnemyDamageTrigger.cs" t="Include" />
             <e p="Extensions.cs" t="Include" />
             <e p="LayerManager.cs" t="Include" />
             <e p="LevelGenerator.cs" t="Include" />
+            <e p="PlayerAttackFinishCallback.cs" t="Include" />
             <e p="PlayerController.cs" t="Include" />
             <e p="PlayerControllerLink.cs" t="Include" />
+            <e p="PlayerDamageTrigger.cs" t="Include" />
+            <e p="PlayerHurtFinishCallback.cs" t="Include" />
             <e p="PlayerMotor.cs" t="Include" />
             <e p="WaterTile.cs" t="Include" />
           </e>

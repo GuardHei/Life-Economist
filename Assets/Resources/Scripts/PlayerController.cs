@@ -18,12 +18,13 @@ public class PlayerController : MonoBehaviour {
 	public GameObject waterQuadA;
 	public GameObject waterQuadB;
 	
+	public int originalHealth;
+	public int originalDamage;
 	public float originalSpeed;
-	public float originalDamage;
-	public float originalHealth;
 
-	public float health;
-	public float damage;
+	public int health;
+	public int damage;
+	public int speed;
 	
 	public List<PropertyEffect> speedEffects = new List<PropertyEffect>();
 	public List<PropertyEffect> damageEffects = new List<PropertyEffect>();
@@ -38,21 +39,26 @@ public class PlayerController : MonoBehaviour {
 
 	private PlayerMotor _motor;
 	private Animator _animator;
+	private PlayerDamageTrigger _damageTrigger;
 	private bool _inControlled = true;
 	[SerializeField]
-	private int _inWater;
+	private bool _inWater;
+	private WaterTile _bottomWaterTile;
+	private WaterTile _topWaterTile;
+	private Vector3Int _topWaterCellPos;
+	private Vector3Int _bottomWaterCellPos;
 	[SerializeField]
 	private bool _attacking;
 	[SerializeField]
 	private bool _grounded;
+	[SerializeField]
 	private bool _dodging;
+	[SerializeField]
 	private bool _hurt;
+	[SerializeField]
 	private bool _died;
-
 	[SerializeField]
 	private int _state;
-	[SerializeField]
-	private int _lastState;
 
 	private void Awake() {
 		_motor = GetComponent<PlayerMotor>();
@@ -62,12 +68,14 @@ public class PlayerController : MonoBehaviour {
 
 		_animator = GetComponentInChildren<Animator>();
 
+		_damageTrigger = GetComponentInChildren<PlayerDamageTrigger>();
+
 		foreach (var renderer in GetComponentsInChildren<Renderer>()) renderer.sortingLayerName = "Player";
 	}
 
 	private void OnEnable() {
 		State = 0;
-		_inWater = 0;
+		_inWater = false;
 		OnWaterRefresh();
 	}
 
@@ -75,8 +83,6 @@ public class PlayerController : MonoBehaviour {
 		if (!_inControlled) return;
 		
 		UpdateWaterEffect();
-
-		_lastState = State;
 
 		bool hasMoved = false;
 		if (Input.GetKey(leftKey)) {
@@ -108,7 +114,7 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		if (Input.GetKeyDown(dodgeKey)) {
-			if (_inWater == 0 && !_hurt && !_died && !_dodging && !_attacking && _grounded) {
+			if (!_inWater && !_hurt && !_died && !_dodging && !_attacking && _grounded) {
 				State = AnimationManager.DodgeState;
 				OnDodgeEnter();
 				hasMoved = true;
@@ -117,46 +123,55 @@ public class PlayerController : MonoBehaviour {
 
 		if (Input.GetKeyDown(attackKey)) {
 			if (!_hurt && !_died && !_dodging && !_attacking) {
-				State = 6;
+				State = AnimationManager.AttackState;
 				OnAttackEnter();
 				hasMoved = true;
 			}
 		}
 		
-		if (!hasMoved && !_hurt && !_died && !_dodging && !_attacking) State = AnimationManager.IdleState;
+		if (!hasMoved && !_hurt && !_died && !_dodging && !_attacking && _grounded) State = AnimationManager.IdleState;
 	}
 
 	private void UpdateWaterEffect() {
 		Tilemap tilemap = levelGenerator.tilemap;
-		TileBase tile = tilemap.GetTile(tilemap.WorldToCell(topWaterDetectionPoint.position));
-		bool inWater = tile is WaterTile;
-		if (inWater) {
-			if (_inWater != 2) {
-				_inWater = 2;
+		Vector3Int topPos = tilemap.WorldToCell(topWaterDetectionPoint.position);
+		Vector3Int bottomPos = tilemap.WorldToCell(bottomWaterDetectionPoint.position);
+		WaterTile topTile = tilemap.GetTile(topPos) as WaterTile;
+		WaterTile bottomTile = tilemap.GetTile(bottomPos) as WaterTile;
+
+		if (!ReferenceEquals(bottomTile, null) || !ReferenceEquals(topTile, null)) {
+			bool refresh = !_inWater || _topWaterCellPos != topPos || _bottomWaterCellPos != bottomPos;
+			if (refresh) {
+				_topWaterCellPos = topPos;
+				_bottomWaterCellPos = bottomPos;
+				_topWaterTile = topTile;
+				_bottomWaterTile = bottomTile;
 				OnWaterRefresh();
-			}
-		} else if (!inWater) {
-			inWater = tilemap.GetTile(tilemap.WorldToCell(bottomWaterDetectionPoint.position)) is WaterTile;
-			if (inWater) {
-				if (_inWater != 1) {
-					_inWater = 1;
-					OnWaterRefresh();
-				}
-			} else {
-				if (_inWater != 0) {
-					_inWater = 0;
-					OnWaterRefresh();
-				}
-			}
+			}	
+			
+			_inWater = true;
+		} else {
+			bool refresh = _inWater || _topWaterCellPos != topPos || _bottomWaterCellPos != bottomPos;
+			if (refresh) {
+				_topWaterCellPos = topPos;
+				_bottomWaterCellPos = bottomPos;
+				_topWaterTile = topTile;
+				_bottomWaterTile = bottomTile;
+				OnWaterRefresh();
+			}	
+			
+			_inWater = false;
 		}
 	}
 
 	private void OnAttackEnter() {
 		_attacking = true;
+		_damageTrigger.Enable();
 	}
 	
 	public void OnAttackExit() {
 		_attacking = false;
+		_damageTrigger.Disable();
 		State = !_grounded ? AnimationManager.JumpState : AnimationManager.IdleState;
 	}
 
@@ -169,31 +184,26 @@ public class PlayerController : MonoBehaviour {
 	private void OnDodgeExit() {
 		_inControlled = true;
 		_dodging = false;
+		State = !_grounded ? AnimationManager.JumpState : AnimationManager.IdleState;
 	}
 
 	private void OnWaterRefresh() {
-		switch (_inWater) {
-			case 0: {
-				waterQuadA.SetActive(false);
-				waterQuadB.SetActive(false);
-				break;
-			}
-			case 1: {
-				waterQuadA.SetActive(false);
-				waterQuadB.SetActive(true);
-				waterQuadB.transform.position = levelGenerator.tilemap.GetCellCenterWorld(levelGenerator.tilemap.WorldToCell(bottomWaterDetectionPoint.position)) + levelGenerator.tilemap.cellSize / 2f;
-				break;
-			}
-			case 2: {
-				waterQuadA.SetActive(true);
-				waterQuadB.SetActive(true);
-				var position = levelGenerator.tilemap.WorldToCell(topWaterDetectionPoint.position);
-				waterQuadA.transform.position = levelGenerator.tilemap.GetCellCenterWorld(position) + levelGenerator.tilemap.cellSize / 2f;
-				position.y -= 1;
-				waterQuadB.transform.position = levelGenerator.tilemap.GetCellCenterWorld(position) + levelGenerator.tilemap.cellSize / 2f;
-				break;
-			}
-		}
+		Vector3 offset = levelGenerator.tilemap.cellSize / 2f;
+		// offset.y = 0f;
+
+		if (!ReferenceEquals(_topWaterTile, null)) {
+			waterQuadA.SetActive(true);
+			Vector3Int position = levelGenerator.tilemap.WorldToCell(topWaterDetectionPoint.position);
+			// position.y += 1;
+			waterQuadA.transform.position = levelGenerator.tilemap.CellToWorld(position) + offset;
+		} else waterQuadA.SetActive(false);
+		
+		if (!ReferenceEquals(_bottomWaterTile, null)) {
+			waterQuadB.SetActive(true);
+			Vector3Int position = levelGenerator.tilemap.WorldToCell(bottomWaterDetectionPoint.position);
+			// position.y += 1;
+			waterQuadB.transform.position = levelGenerator.tilemap.CellToWorld(position) + offset;
+		} else waterQuadB.SetActive(false);
 	}
 
 	private void OnGroundEnter() {
@@ -202,6 +212,27 @@ public class PlayerController : MonoBehaviour {
 
 	private void OnGroundExit() {
 		_grounded = false;
+	}
+
+	public void GetHurt(Vector2 hit, int damage) {
+		if (_dodging || _died || _hurt) return;
+		OnHurtEnter(hit, damage);
+	}
+
+	private void OnHurtEnter(Vector2 hit, int damage) {
+		if (_attacking) {
+			_attacking = false;
+			_damageTrigger.Disable();
+		}
+		
+		_hurt = true;
+		State = AnimationManager.HurtState;
+		_motor.GetHit(hit.x, hit.y);
+	}
+
+	public void OnHurtExit() {
+		_hurt = false;
+		State = !_grounded ? AnimationManager.JumpState : AnimationManager.IdleState;
 	}
 }
 

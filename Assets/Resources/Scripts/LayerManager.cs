@@ -2,6 +2,9 @@ using UnityEngine;
 
 public static class LayerManager {
 	public static readonly int GroundLayer = LayerMask.NameToLayer("Ground");
+	public static readonly int EnemyLayer = LayerMask.NameToLayer("Enemy");
+	public static readonly int PlayerLayer = LayerMask.NameToLayer("Player");
+	public static readonly int WeaponLayer = LayerMask.NameToLayer("Weapon");
 }
 
 public static class AnimationManager {

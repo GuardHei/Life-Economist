@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMotor : MonoBehaviour {
@@ -76,7 +74,7 @@ public class PlayerMotor : MonoBehaviour {
 				else _freeVelocityX = 0f;
 			}
 		
-			_rigidbody.velocity = new Vector2(_velocityX, _velocityY);
+			_rigidbody.velocity = new Vector2(_velocityX + _freeVelocityX, _velocityY);
 		}
 	}
 
@@ -128,8 +126,8 @@ public class PlayerMotor : MonoBehaviour {
 	}
 	
 	public void GetHit(float velocityX, float velocityY) {
-		_freeVelocityX += velocityX;
-		_velocityY = velocityY;
+		_freeVelocityX = Mathf.Abs(_freeVelocityX) > Mathf.Abs(velocityX) ? _freeVelocityX : velocityX;
+		_velocityY = _velocityY > velocityY ? _velocityY : velocityY;
 	}
 
 	private void OnTriggerEnter2D(Collider2D other) {
